@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="container text-center">
+    <h4>Add a new product here</h4>
+  </div>
+
+  <!-- Two-way binding -->
+  <form (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="description" class="form-label">Description of product...</label>
+      <input type="text" class="form-control" name="description" id="description" required="true"
+        [(ngModel)]="product.description">
+    </div>
+
+    <div class="mb-3">
+      <label for="price" class="form-label">Price of product...</label>
+      <input type="number" step="any" class="form-control" name="price" id="price" [(ngModel)]="product.price">
+    </div>
+
+    <div class="mb-3">
+      <label for="stock" class="form-label">Stock of product...</label>
+      <input type="number" class="form-control" name="stock" id="stock" [(ngModel)]="product.stock">
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="btn btn-warning me-4">Add Product</button>
+      <a href="/" class="btn btn-danger">Return</a>
+    </div>
+  </form>
+</div>
